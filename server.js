@@ -10,6 +10,16 @@ const server = http.createServer((req, res) =>{ //as soon as it created it will 
 
     const extName = String(path.extname(filePath)).toLowerCase(); //wtf is this?
 
+    const mimeType = {
+        '.html': 'text/html',
+        '.css' : 'text/css',
+        '.js' : 'text/javascript',
+        '.png' : 'text/png'
+    }
+     //types of file my server is supporting - there are 1000s types of files server dont accept all kind of files - so if a server is not accepting a particular type of file then you knew that file is not mention here. Explain.
+
+     const contentType = mimeType[extName] || 'application-octet-stream'; // explain
+
      
 }); 
 
